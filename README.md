@@ -1,6 +1,9 @@
 # auto
 项目自动化相关
 
+## 待办，自动生成转存地址，需要mcp server封装，或者n8n等的api调用，
+可以改造工程，夸克批量转存这个Python：https://github.com/ihmily/QuarkPanTool?tab=readme-ov-file
+
 
 ## MCP自动判别，资源仓库类别，实现自动化提交及生成相关文件等操作的prompt
 
