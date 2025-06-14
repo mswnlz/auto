@@ -4,15 +4,20 @@
 ------
 
 # 一，生成url.txt url文件
-## 复制要批量转存和转发生成url的所有文本bbbb，然后进入vs + cline插件中，写下下面这段prompt
+
+ 复制要批量转存和转发生成url的所有文本bbbb，然后进入vs + cline插件中，写下下面这段prompt
 
 @/url.txt 清空原来的文件，把下面这段文本，截取出url，每个URL一行，保存到url.txt文件中
 文本bbbb
+
+------
 
 # 二、执行批量转存工具
 
 1. python python quark.py
 2. 按步骤，完成生成批量的转发URL
+
+------
 
 # 三，按⬇️的mcp的prompt，实现github的自动识别分类及仓库提交
 
@@ -69,19 +74,14 @@ https://s.869hr.uk/2hm
 ----------
 
 
-一
-
-## 复制要批量转存和转发生成url的所有文本bbbb，然后进入vs + cline插件中，写下下面这段prompt
-
-@/url.txt 清空原来的文件，把下面这段文本，截取出url，每个URL一行，保存到url.txt文件中
-文本bbbb
-
-
 
 
 ----------
 
-## 待办，自动生成转存地址，需要mcp server封装，或者n8n等的api调用，
+
+# 待办TODO
+
+自动生成转存地址，需要mcp server封装，或者n8n等的api调用，
 可以改造工程，夸克批量转存这个Python：https://github.com/ihmily/QuarkPanTool?tab=readme-ov-file
 
 ----------
