@@ -72,7 +72,9 @@ https://s.869hr.uk/2hm
 
 ----------
 
+# 四，配置了github workflow action，自动发送更新的资源到TG群组：
 
+![image](https://github.com/user-attachments/assets/33d8cd8d-36ca-451d-a783-3d4362601a6b)
 
 
 ----------
