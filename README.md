@@ -1,5 +1,5 @@
 # auto
-项目自动化相关
+此项目自动化相关（涉及到的工具，vscode+cline插件+各种AI的key，下面主要使用了DeepSeek，Gemini等）
 
 ------
 
@@ -7,8 +7,7 @@
 
  复制要批量转存和转发生成url的所有文本bbbb，然后进入vs + cline插件中，写下下面这段prompt
 
-@/url.txt 清空原来的文件，把下面这段文本，截取出url，每个URL一行，保存到url.txt文件中
-文本bbbb
+@/url.txt  清空原来的文件，把下面这段文本，截取出url，每个URL一行，如果url，没有https:// ，则前面加上，确保url是完整的是合法url，保存到url.txt文件中
 
 ------
 
