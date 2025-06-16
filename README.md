@@ -79,6 +79,17 @@ https://s.869hr.uk/2hm
 
 ----------
 
+# 自动发推
+
+### 一
+安装库：npm install @actions/core twitter-api-v2
+工程位置：https://github.com/PLhery/node-twitter-api-v2
+
+### 二
+获取推特官方API token：https://developer.x.com/en
+
+
+------------------
 
 # 待办TODO
 
