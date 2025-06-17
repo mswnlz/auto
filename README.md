@@ -3,7 +3,7 @@
 
 ------
 
-# 一，生成url.txt url文件
+# 一、生成url.txt url文件
 
  复制要批量转存和转发生成url的所有文本bbbb，然后进入vs + cline插件中，写下下面这段prompt
 
@@ -18,7 +18,7 @@
 
 ------
 
-# 三，按⬇️的mcp的prompt，实现github的自动识别分类及仓库提交
+# 三、按⬇️的mcp的prompt，实现github的自动识别分类及仓库提交
 
 ----------
 
@@ -72,14 +72,14 @@ https://s.869hr.uk/2hm
 
 ----------
 
-# 四，配置了github workflow action，自动发送更新的资源到TG群组：
+# 四、配置了github workflow action，自动发送更新的资源到TG群组：
 
 ![image](https://github.com/user-attachments/assets/33d8cd8d-36ca-451d-a783-3d4362601a6b)
 
 
 ----------
 
-# 自动发推
+# 五、自动发推
 
 
 <img width="587" alt="iShot_2025-06-17_09 34 40" src="https://github.com/user-attachments/assets/a5141896-840e-44f2-96c3-ea9b0900c504" />
