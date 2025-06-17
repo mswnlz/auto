@@ -81,7 +81,8 @@ https://s.869hr.uk/2hm
 
 # 自动发推
 
-![Uploading image.png…]()
+
+<img width="587" alt="iShot_2025-06-17_09 34 40" src="https://github.com/user-attachments/assets/a5141896-840e-44f2-96c3-ea9b0900c504" />
 
 
 ### 一
