@@ -24,7 +24,7 @@
 
 ## MCP自动判别，资源仓库类别，实现自动化提交及生成相关文件等操作的prompt
 
-获取用户mswnlz存在哪些github仓库，先分析这些github仓库的特征及格式到写法，然后判断下面输入的这些文件描述和链接，分别所属的类别，对应到最相关的仓库中，进行修改对应文件及相关操作，完成提交github版本记录
+获取用户mswnlz存在哪些github仓库，一定把mswnlz.github.io仓库排除掉，注意下面所有都跟这个仓库没关系，先分析这些github仓库的特征及格式到写法，然后判断下面输入的这些文件描述和链接，分别所属的类别，对应到最相关的仓库中，进行修改对应文件及相关操作，完成提交github版本记录
 
 具体要求如下，请严格执行
 
@@ -94,6 +94,13 @@ https://s.869hr.uk/2hm
 
 
 ------------------
+# 六，基于github仓库，做了个网站，https://doc.869hr.uk
+<img width="1103" alt="image" src="https://github.com/user-attachments/assets/921f54d6-82b2-4376-8594-cca9ac968d4f" />
+并支持搜索
+<img width="1091" alt="image" src="https://github.com/user-attachments/assets/500c9118-7366-43da-a6d5-324f69c4ca32" />
+
+
+---------------
 
 # 待办TODO
 
