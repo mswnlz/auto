@@ -81,31 +81,70 @@
 Skills 存放在两个位置：
 
 1. **主仓库**：`/Users/m./Documents/QNSZ/project/skills/`
-   - GitHub：https://github.com/mswnlz/skills
+   - GitHub：https://github.com/wlzh/skills
    - 包含所有自定义 Skills
 
 2. **OpenClaw Skills**：`~/npm-global/lib/node_modules/openclaw/skills/`
    - OpenClaw 内置 Skills
 
-## 今日新增 Skill (2026-03-14)
+## quark-mswnlz-publisher Skill
 
-### quark-mswnlz-publisher v1.0.0
+**当前版本**: v1.2.0 (2026-03-14 更新)
 
 **功能**：Quark → mswnlz GitHub → 网站重建 完整自动化流程
 
 **位置**：`/Users/m./Documents/QNSZ/project/skills/quark-mswnlz-publisher/`
 
-**使用方法**：
-1. 编辑 `/Users/m./Documents/QNSZ/project/QuarkPanTool/items.json` 添加资源
-2. 运行 `python batch_runner.py` 批量处理
-3. 自动提交到对应仓库并触发网站更新
+### 核心功能
 
-**核心文件**：
-- `SKILL.md` - Skill 定义和配置
-- `scripts/process_items.py` - 资源处理脚本
-- `references/mswnlz-repos-cache.json` - 仓库缓存
+| 功能 | 说明 |
+|------|------|
+| 夸克批量转存 | 新建批次文件夹 → 批量转存 URL |
+| 推广文件复制 | 从 `temp/要共享的文件` 自动复制到每个分享文件夹 |
+| 自动生成分享链接 | 永久 + 加密 + 随机提取码 |
+| 自动归类 | 根据标题关键词自动归类到对应仓库 |
+| Telegram 通知 | 频道单条 + 群组汇总（多仓库只发一条）|
+| 站点自动更新 | 触发 mswnlz.github.io 重建 |
 
-**相关仓库映射**：
+### 使用方法
+
+1. **准备推广文件**（一次性）：
+   - 在夸克网盘创建 `temp/要共享的文件` 文件夹
+   - 上传推广文件（免责声明、解压密码等）
+
+2. **准备输入文件**：
+   ```bash
+   # 编辑 items.json
+   [
+     {"title": "资源名称", "url": "https://pan.quark.cn/s/xxx"}
+   ]
+   ```
+
+3. **执行批量处理**：
+   ```bash
+   cd /Users/m./Documents/QNSZ/project/QuarkPanTool
+   python batch_runner.py
+   ```
+
+4. **自动执行**：
+   - 复制推广文件到每个文件夹
+   - 生成分享链接
+   - 归类到对应仓库
+   - 提交到 GitHub
+   - 发送 Telegram 通知
+   - 触发站点重建
+
+### 脚本说明
+
+| 脚本 | 功能 |
+|------|------|
+| `quark_batch_run.py` | 批量转存 + 生成分享链接 |
+| `quark_copy.py` | 复制推广文件 |
+| `mswnlz_publish.py` | 发布到 GitHub + 发送 Telegram 通知 |
+| `trigger_site_rebuild.sh` | 触发站点重建 |
+
+### 仓库映射
+
 | 资源类型 | 仓库名 |
 |---------|--------|
 | 书籍/文档 | book |
@@ -119,19 +158,53 @@ Skills 存放在两个位置：
 | 传统文化 | chinese-traditional |
 | 工具软件 | tools |
 
-## Telegram 通知配置
+## Telegram 通知机制
 
-所有资源仓库（除 auto 外）都配置了自动 Telegram 通知：
+### 通知配置
 
-| 目标 | 类型 | 内容 |
-|------|------|------|
-| tgmShare 话题 5 | 群组 | 简单更新提示 + 频道链接 |
-| tgmShareAI 话题 2 | 群组 | 简单更新提示 + 频道链接 |
-| @dabaziyuan | 频道 | 完整资源信息 + GitHub 链接 |
+| 目标 | 类型 | 发送方式 | 内容 |
+|------|------|----------|------|
+| @dabaziyuan | 频道 | 每条单独发 | 完整资源信息 + GitHub 链接 |
+| tgmShare 话题 5 | 群组 | 汇总消息 | 更新仓库列表 + 频道链接 |
+| tgmShareAI 话题 2 | 群组 | 汇总消息 | 更新仓库列表 + 频道链接 |
 
-**Secrets 配置**：
-- `BOT_TOKEN`：Telegram Bot Token
-- `TELEGRAM_CHANNEL_ID`：`@dabaziyuan`
+### GitHub Secrets
+
+| Secret | 值 |
+|--------|-----|
+| `BOT_TOKEN` | Telegram Bot Token |
+| `TELEGRAM_CHANNEL_ID` | `@dabaziyuan` |
+
+### 群组汇总消息格式
+
+```
+📝 资源更新
+
+已更新仓库：book、movies、curriculum
+共 5 项资源
+
+📦 https://t.me/dabaziyuan
+```
+
+## 推广文件
+
+### 夸克网盘位置
+`temp/要共享的文件`
+
+### 文件清单
+
+| 文件 | 用途 |
+|------|------|
+| `必看免责声明-及加入资源分享群...txt` | 免责声明 + 联系方式 + 赚钱教程 |
+| `1.【解压密码869hr.uk】-移动端...html` | 移动端解压密码获取页面 |
+| `0.【双击获取解压密码】-Mac...webloc` | Mac 快捷方式 |
+| `0.【双击获取解压密码】-Windows...url` | Windows 快捷方式 |
+
+### 工作原理
+
+1. 用户提前上传推广文件到 `temp/要共享的文件`
+2. Skills 脚本在转存后自动复制到每个分享文件夹
+3. 无需实现上传 API，简单可靠
 
 ---------------
 
